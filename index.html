@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://www.amongusavatarmaker.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>Among Us Avatar Maker</title>
+<script src="./resource/jquery-2.1.4.min.js"></script><link href="./resource/bootstrap.min.css" rel="stylesheet"><link href="./resource/prism.css" rel="stylesheet"><script src="./resource/bootstrap.min.js"></script><script src="./resource/prism.js"></script><script src="./resource/Cubexy.js"></script><style>
+    .btn-lg{box-shadow: 0px 4px rgba(0, 0, 0, 0.2);	}
+.btn3d, .btn3d:focus {
+    position:relative;
+    top: -6px;
+    border:0;
+ 
+         outline:medium none;
+     transition: all 0.04s linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+}
+.btn3d:active, .btn3d.active {
+    top:2px;
+}
+.btn3d.btn-white {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#fff;
+}
+.btn3d.btn-white:active, .btn3d.btn-white.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#fff;
+}
+.btn3d.btn-default {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-default:active, .btn3d.btn-default.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-primary {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#4274D7;
+}
+.btn3d.btn-primary:active, .btn3d.btn-primary.active {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color:#4274D7;
+}
+.btn3d.btn-success {
+    box-shadow:0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#78d739;
+}
+.btn3d.btn-success:active, .btn3d.btn-success.active {
+    box-shadow:0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #78d739;
+}
+.btn3d.btn-info {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#39B3D7;
+}
+.btn3d.btn-info:active, .btn3d.btn-info.active {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #39B3D7;
+}
+.btn3d.btn-warning {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#FEAF20;
+}
+.btn3d.btn-warning:active, .btn3d.btn-warning.active {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #FEAF20;
+}
+.btn3d.btn-danger {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#D73814;
+}
+.btn3d.btn-danger:active, .btn3d.btn-danger.active {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #D73814;
+}
+.btn3d.btn-magick {
+    color: #fff;
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#bb39d7;
+}
+.btn3d.btn-magick:active, .btn3d.btn-magick.active {
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #bb39d7;
+}
+    </style></head>
+    
+    
+    
+     
+    
+    
+	  
+    
+    
+    
+    
+    
+<style>#colors { text-align: left;    margin-left: -12px;}#colors li { display: inline-table;width: 20px;height: 20px;margin: 2px;width: 20px;height: 20px; cursor: pointer;}.seleccionado{border: #000000 2px outset;}</style><body background="./resource/SPACE.png" oncontextmenu="return false" onkeydown="return false">
+    <style>
+        #avatar img{ width: 100px}
+        #avatar img:hover{ border: #4bf707 2px outset; margin:3px; background-color: #4bf707;}
+        #menu img{ width: 90px }
+        #menu img:hover{  border: #4bf707 2px outset; background-color: #4bf707;}
+        #menu .tab-activo{ border:  #4bf707 4px outset;}
+        #canvas {  border: #ffffff 4px outset;}
+      
+    @font-face
+    {
+        font-family: 'VCR OSD Mono';
+        src: url('./fonts/Fuente.ttf');
+        font-style: normal;
+    }
+    h1{
+        font-family: 'VCR OSD Mono';
+        font-size: 15px;
+    }
+        
+        </style>
+    <div class="container">
+        <div align="center">
+            <img align="center" src="./resource/amonguslogo.png">
+    </div>
+        <div class="row">
+           
+             <div class="col-md-9 text-center">
+                   
+              
+                <canvas width="600" height="600" id="canvas">No Canvas support</canvas>
+                </div>
+                <div align=center>
+                    <br><br><a id="Descargar"><img onmouseout="this.src='./resource/DOWNLOAD.png';" onmouseover="this.src='./resource/DOWNLOAD2.png';" src="./resource/DOWNLOAD.png"></a>
+                <br><br>
+                </div>
+                
+                <div class="col-md-8">
+                    
+       
+                </div>
+                
+                     
+            </div>
+        </div>
+     
+    <div class="panel panel-success" align="center">
+        <div class="panel-heading" align="center;" style="background-image:none;background: #c0c0c0;">
+            
+          <div id="menu">
+              <img class="img-thumbnail tab-activo" src="./resource/FONDO.png" data-tab="FONDO">
+              <img class="img-thumbnail" src="./resource/PLAYER.png" data-tab="PLAYER">
+               <img class="img-thumbnail" src="./resource/HAT.png" data-tab="HATS">
+              <img class="img-thumbnail" src="./resource/COSTUME.png" data-tab="COSTUME">
+              <img class="img-thumbnail" src="./resource/PET.png" data-tab="PET">
+              <img class="img-thumbnail" src="./resource/VOTE.png" data-tab="VOTE">
+
+          </div>
+        </div>
+        <div class="panel-body">
+          <div id="avatar">
+                             
+                          <div id="FONDO" align="left" class="" style="display: block;">            
+                             
+                             <img class="img-thumbnail" src="./resource/BASE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B5.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B6.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B7.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B8.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B9.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B10.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B11.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B12.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B13.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B15.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B16.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B17.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/B18.png" style="cursor: pointer;">
+                              <img class="img-thumbnail activo" src="./resource/1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/5.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/6.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/7.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/8.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/9.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/10.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/11.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/12.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/13.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/15.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/16.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/17.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/18.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/19.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/20.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/grid1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/grid2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/grid3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/grid4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/stars1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/stars2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEARTSBLACK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/REDHEARTS.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEARTSBW.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEARTSRB.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEARTSRW.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BLUEFLAMES.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PINKFLAMES.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/WAVE1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WAVE2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WAVE3.png" style="cursor: pointer;">
+
+
+                              <img class="img-thumbnail" src="./resource/MILITARBYN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MILITARAZ.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/30.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/40.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/50.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/Gay.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Pansexuality.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Polysexuality.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Transgender.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Lesbian.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Nonbinary.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Agender.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Aromantic.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Asexual.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Bisexual.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Demisexual.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Genderfluity.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Genderqueer.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/Intersex.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/PORTAL SPACE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PORTAL.png" style="cursor: pointer;">
+
+
+
+
+                             </div>
+                          
+                          <div id="PLAYER" align="left" style="display: none;" class="actual">
+                              
+                              <img class="img-thumbnail" src="./resource/BASE(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BLACK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BLUE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BROWN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CYAN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DARKGREEN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/GREEN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail activo seleccionado" src="./resource/ORANGE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PINK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PURPLE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/RED.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WHITE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/YELLOW.png" style="cursor: pointer;">
+                             
+                         </div>
+                              <div id="HATS" align="left" style="display: none;">
+                                
+                              <img class="img-thumbnail activo" src="./resource/BASE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ALIEN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ANTHENA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ASTRO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON1.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON5.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON6.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON7.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON8.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON9.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON10.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON11.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLOON12.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BANANA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BANDANA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BEANIE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BEAR.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BERET.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BIRTHDAY.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BLACK(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BROWS.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CAP.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CAPTAIN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CHEESE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CHEF.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CHERRY.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/COP.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/COWBOY.png" style="cursor: pointer;">
+                             
+                              <img class="img-thumbnail" src="./resource/CREWMATE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE5.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE6.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE7.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE8.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE9.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE10.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE11.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CREWMATE12.png" style="cursor: pointer;">
+                                                 
+                              <img class="img-thumbnail" src="./resource/CROWN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DOCTOR.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DOUBLE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DRAIN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/EGG.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ELMER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/EYE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/FEZ.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/FLAMINGO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/FLOWER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/FLOWERPOT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/FREEZE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/GASMASK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/GOGGLES.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/GOGGLES2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/GREEN(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HALO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEADBAND.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HEADPHONES.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HELMET.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HORNS.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/LINK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MASK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MILITARY.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/NEST.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/NINJA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PAPER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PAPERHAT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PARTY.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PILOT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PLANT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/POLICE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/POMPADOUR.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/POSTIT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SAFARI.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SECURITY.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SHERIFF.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SIGN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SNORKEL.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SNOW.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SOLDIER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/STICKMAN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/STPATRICK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SUNGLASSES.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/TOPHAT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/TOWEL.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/USHANKA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/VIKING.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WHITEHAT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WILDWEST.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WINTER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WORKER.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/HAWK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CAT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PIRATE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CUERVO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WOLF.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WITCH.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BAG.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BAT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/JASON.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/KNIFE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DEVIL.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/SANTA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/RENO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/XMAS.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SNOWMAN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CANE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PRESENT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/LIGHTS.png" style="cursor: pointer;">
+                             
+                              <img class="img-thumbnail" src="./resource/ALICE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MADHATTER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/REDQUEEN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WHITERABBIT.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/HERCULES.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MEGARA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HADES.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/RICK.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MORTY.png" style="cursor: pointer;">
+
+                           
+                            </div>
+                            
+  
+  
+                          <div id="COSTUME" align="left" style="display: none;">
+                             
+                              <img class="img-thumbnail activo" src="./resource/BASE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ASTRO(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/POLICE(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BLACKSUIT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/CAPTAIN(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DOCTOR(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/EXPLORER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/JACKET.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/LATEX.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MECHANIC.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MILITARY(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINER(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/SECURITY(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WHITESUIT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WINTER(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WORKER(1).png" style="cursor: pointer;">
+                            
+                              <img class="img-thumbnail" src="./resource/BALLERINA.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLERINAazul.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BALLERINAmorada.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/HEARTS.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/ALICE(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MADHATTER(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/REDQUEEN(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/WHITERABBIT(1).png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/HERCULES(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MEGARA(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HADES(1).png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/RICK(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MORTY(1).png" style="cursor: pointer;">
+
+
+                              
+                          
+                          </div>
+  
+                              <div id="PET" align="left" style="display: none;">
+                                  
+                              <img class="img-thumbnail activo" src="./resource/BASE.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/ROBOT.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BEDCRAB.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BEDCRAB2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/BRAINSLUG.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/DOG.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/HAMSTER.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/STICKMAN(1).png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/STICKWOMAN.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/UFO.png" style="cursor: pointer;">
+
+                              <img class="img-thumbnail" src="./resource/MINI.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI2.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI3.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI4.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI5.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI6.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI7.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI8.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI9.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI10.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI11.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/MINI12.png" style="cursor: pointer;">
+                              
+                              <img class="img-thumbnail" src="./resource/PEGASUS.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PANICO.png" style="cursor: pointer;">
+                              <img class="img-thumbnail" src="./resource/PENA.png" style="cursor: pointer;">
+
+                              </div>
+                              <div id="VOTE" align="left" style="display: none;">  
+                                <img class="img-thumbnail activo" src="./resource/BASE.png" style="cursor: pointer;">
+                                <img class="img-thumbnail" src="./resource/CREWMATE(1).png" style="cursor: pointer;">
+                                <img class="img-thumbnail" src="./resource/IMPOSTOR.png" style="cursor: pointer;">
+                                <img class="img-thumbnail" src="./resource/IVOTED.png" style="cursor: pointer;">
+                                <img class="img-thumbnail" src="./resource/defeat.png" style="cursor: pointer;">
+                                <img class="img-thumbnail" src="./resource/victory.png" style="cursor: pointer;">
+
+
+
+                            </div>
+                      </div>
+                 
+        </div>
+      </div>
+      <h1>
+        <div align="center" style="color:#ffffff;">
+		Feel free to tag us in your creations with <span style="color:#ff0520">@AmongUsAvMaker</span> or use <span style="color:#ff0520">#AmongUsAvatarMaker</span>
+          <br>                                                                          
+      <br>
+      <br>
+      
+      <span class="confirm_selection">										
+                                                  
+                                                                                                       Disclaimer: This is an unofficial Among Us Avatar Maker fan art, <a href="http://www.innersloth.com/gameAmongUs.php" target="_blank"><span style="color:#8dffff">Innersloth</span></a> owns all rights to Among Us.
+         <br> All names, characters and items are used in this are used for identification purposes only.</span>
+     <br> 
+	<br>
+      <br>Want to display your ad on this page? Contact us! <a href="mailto:advertisement@amongusavatarmaker.com"> <span style="color:#8dffff">advertisement@amongusavatarmaker.com</span> </a>
+      <br>
+	<br>
+			<a href="https://cinemaplus.club/"><img src="./resource/Ev-ERYTHING-STARTING-AT-3-29-month-5.png" alt="Ev-ERYTHING-STARTING-AT-3-29-month-5" border="0"></a>
+			<br>
+			<br>
+			<a href="https://spaceshiba.com/"><img src="./resource/bannershiba.png" alt="bannershiba" border="0"></a>
+			<br>
+			<br>
+  </div></h1>
+<script>
+  $('#avatar').Cubexy();
+  </script>
+  <script>
+  $('#menu img').click(function(){
+  $('.tab-activo').removeClass('tab-activo');
+  $(this).addClass('tab-activo');
+  $('#avatar >div').hide();
+  $('#avatar >div#'+$(this).attr('data-tab')).show();
+  });
+  $('#avatar >div').hide();
+  $('#avatar >div#ojos').show();
+  </script>
+
+  
+  
+  </body></html>
